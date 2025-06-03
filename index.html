@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FinSight - WebApp</title>
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+  <!-- ---------- CABECERA ---------- -->
+  <header class="header">
+    <h1>🔷 FinSight</h1>
+    <p>La inteligencia que guía tus decisiones de inversión</p>
+    <nav class="nav-bar">
+      <a href="#noticias">Noticias</a>
+      <a href="#alertas">Alertas</a>
+      <a href="#comparativa">Comparativa</a>
+      <a href="#educacion">Módulos Educación</a>
+      <a href="#acerca">Acerca</a>
+      <a href="#foro">Foro</a>
+      <a href="#glosario">Glosario</a>
+
+
+    </nav>
+  </header>
+
+  <!-- ------ PANEL DE USUARIO OCULTO ------ -->
+  <div id="hamburger">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+  <aside id="user-panel">
+    <div id="user-panel-header">
+      <h2>👤 Mi Cuenta</h2>
+      <button id="close-panel">✖</button>
+    </div>
+    <ul class="user-info">
+      <li><strong>Nombre:</strong> Andrea Martínez</li>
+      <li><strong>Saldo disponible:</strong> $1,250.00</li>
+      <li><strong>Tarjetas:</strong>
+        <ul>
+          <li>💳 Visa •••• 1234</li>
+          <li>💳 Mastercard •••• 5678</li>
+        </ul>
+      </li>
+      <li><strong>Dinero en línea:</strong> $300.00</li>
+      <li><strong>Billetera:</strong> FinWallet</li>
+    </ul>
+  </aside>
+
+  <!-- ---------- GRÁFICA DE MERCADO ---------- -->
+  <section id="grafica" class="section">
+    <h2>📈 Gráfica de Mercado en Tiempo Real (simulada)</h2>
+    <canvas id="marketChart"></canvas>
+  </section>
+
+  <!-- ---------- NOTICIAS FINANCIERAS ---------- -->
+  <section id="noticias" class="section">
+    <h2>📰 Noticias Financieras</h2>
+    <div class="news-grid">
+      <div class="news-card">
+        <img src="img/carga-vehiculos-electricos_23-2151951201.avif" alt="Tesla noticia">
+        <h3>🔹 Tesla sube un 6.7%</h3>
+        <p>Superó expectativas de Wall Street, generando confianza entre los inversores.</p>
+      </div>
+      <div class="news-card">
+        <img src="img/istockphoto-1925126992-612x612.jpg" alt="FED noticia">
+        <h3>🔹 La FED mantiene las tasas</h3>
+        <p>Esto aporta estabilidad al dólar y favorece las inversiones de bajo riesgo.</p>
+      </div>
+      <div class="news-card">
+        <img src="img/istockphoto-172421562-612x612.jpg" alt="Bitcoin noticia">
+        <h3>🔹 Bitcoin alcanza los $44,000</h3>
+        <p>Los analistas creen que se avecina una nueva tendencia alcista.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- ALERTAS DE INVERSIÓN ---------- -->
+  <section id="alertas" class="section">
+    <h2>🚨 Alertas de Inversión</h2>
+    <div class="pro-alerts-grid">
+      <div class="pro-alert-card">
+        <div class="pro-alert-header">
+          <span class="ticker">TEC-112</span>
+          <span class="performance positive">+5.3%</span>
+        </div>
+        <p class="pro-text">Tendencia alcista en el sector tecnológico. Consolidación con potencial de ruptura.</p>
+        <div class="mini-chart success-chart"></div>
+      </div>
+
+      <div class="pro-alert-card">
+        <div class="pro-alert-header">
+          <span class="ticker">ENR-089</span>
+          <span class="performance negative">-3.9%</span>
+        </div>
+        <p class="pro-text">Alta volatilidad en energéticas. Posible corrección tras retroceso sostenido.</p>
+        <div class="mini-chart warning-chart"></div>
+      </div>
+
+      <div class="pro-alert-card">
+        <div class="pro-alert-header">
+          <span class="ticker">GLB-540</span>
+          <span class="performance positive">+4.7%</span>
+        </div>
+        <p class="pro-text">Oportunidad en mercados globales tras fuerte impulso institucional.</p>
+        <div class="mini-chart success-chart"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- COMPARATIVA PROFESIONAL ---------- -->
+  <section id="comparativa" class="section">
+    <h2>📊 Comparativa Profesional de Acciones</h2>
+    <table class="stock-comparison">
+      <thead>
+        <tr>
+          <th>Símbolo</th>
+          <th>Precio</th>
+          <th>Δ (USD)</th>
+          <th>Δ %</th>
+          <th>Volumen</th>
+          <th>Market Cap</th>
+          <th>Tendencia</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Apple (AAPL)</td>
+          <td>$175.32</td>
+          <td class="green">+1.25</td>
+          <td class="green">+0.72%</td>
+          <td>28.5 M</td>
+          <td>$2.75 T</td>
+          <td><canvas class="sparkline" data-symbol="AAPL"></canvas></td>
+        </tr>
+        <tr>
+          <td>Tesla (TSLA)</td>
+          <td>$245.18</td>
+          <td class="red">−2.40</td>
+          <td class="red">−0.97%</td>
+          <td>18.9 M</td>
+          <td>$780 B</td>
+          <td><canvas class="sparkline" data-symbol="TSLA"></canvas></td>
+        </tr>
+        <tr>
+          <td>Microsoft (MSFT)</td>
+          <td>$320.05</td>
+          <td class="green">+0.85</td>
+          <td class="green">+0.27%</td>
+          <td>22.1 M</td>
+          <td>$2.40 T</td>
+          <td><canvas class="sparkline" data-symbol="MSFT"></canvas></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ---------- MÓDULOS EDUCATIVOS ---------- -->
+  <section id="educacion" class="section">
+    <h2>📚 Módulos Educativos</h2>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <h3>Introducción a las Inversiones</h3>
+        <p>Conceptos básicos: activos, pasivos, riesgos y rentabilidad.</p>
+      </div>
+      <div class="edu-card">
+        <h3>Análisis Técnico</h3>
+        <p>Lectura de gráficas, patrones y tendencias de mercado.</p>
+      </div>
+      <div class="edu-card">
+        <h3>Análisis Fundamental</h3>
+        <p>Evaluación de estados financieros, ratios y desempeño empresarial.</p>
+      </div>
+      <div class="edu-card">
+        <h3>Gestión de Riesgos</h3>
+        <p>Diversificación, asignación de cartera y uso de stop-loss.</p>
+      </div>
+    </div>
+  </section>
+
+   <!-- ---------- Encuesta ---------- -->
+  <section id="encuesta" class="section">
+  <h2>📊 Encuesta del Día</h2>
+  <p>¿Qué contenido te gustaría ver más en FinSight?</p>
+
+  <form id="poll-form">
+    <label><input type="radio" name="opcion" value="Educación básica" required /> Educación financiera básica</label><br/>
+    <label><input type="radio" name="opcion" value="Criptomonedas" /> Criptomonedas y activos digitales</label><br/>
+    <label><input type="radio" name="opcion" value="Análisis técnico" /> Análisis técnico y gráficos</label><br/>
+    <label><input type="radio" name="opcion" value="Noticias globales" /> Noticias globales del mercado</label><br/><br/>
+    <button type="submit">Votar</button>
+  </form>
+
+  <div id="poll-result" style="display:none">
+    <h3>📈 Resultados:</h3>
+    <div id="poll-bars"></div>
+  </div>
+</section>
+
+<!-- ---------- Glosario ---------- -->
+<section id="glosario" class="section">
+  <h2>📘 Glosario Financiero</h2>
+  <p>Consulta conceptos clave del mundo financiero. Usa el buscador o baja con la ruedita para explorar más.</p>
+
+  <input type="text" id="buscador" placeholder="Buscar un término..." />
+
+  <div id="lista-conceptos" class="glosario-scroll">
+    <!-- Aquí van los términos dinámicos -->
+  </div>
+</section>
+
+  
+  <!-- ---------- SECCIÓN ACERCA ---------- -->
+  <section id="acerca" class="section">
+    <h2>ℹ️ Acerca de FinSight</h2>
+    <div class="about-content">
+      <h3>Misión</h3>
+      <p>Proveer un servicio integral que recopile, analice y presente datos financieros y noticias económicas de múltiples fuentes, facilitando la toma de decisiones de inversión a usuarios de distintos niveles de experiencia.</p>
+      <h3>Visión</h3>
+      <p>Ser la plataforma de referencia en Honduras y Centroamérica para inversionistas que buscan información confiable, objetiva y accesible, democratizando el acceso a la educación financiera.</p>
+      <h3>Valores</h3>
+      <ul>
+        <li>Transparencia</li>
+        <li>Simplicidad de uso</li>
+        <li>Innovación con propósito</li>
+        <li>Empoderamiento digital</li>
+        <li>Responsabilidad</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ---------- CHATBOT ---------- -->
+  <div id="chat-widget">
+    <div id="chat-bubble">💬</div>
+    <div id="chat-window">
+      <div id="chat-header">Asistente FinSight</div>
+      <div id="chat-messages"></div>
+      <div id="chat-input-area">
+        <input type="text" id="chat-input" placeholder="Escribe tu pregunta..." />
+        <button id="chat-send">Enviar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ---------- PIE DE PÁGINA ---------- -->
+  <footer>
+    <p>© 2025 FinSight. Proyecto académico de administración.</p>
+  </footer>
+<script src="script.js"></script>
+</body>
+</html>
+
+<section id="foro" class="section">
+  <h2>💬 Foro Comunitario</h2>
+  <p>Comparte ideas, preguntas y consejos con otros usuarios.</p>
+
+  <div id="foro-container">
+    <div id="foro-temas">
+      <h3>Tema: ¿Qué opinas del mercado actual?</h3>
+      <div class="comentarios">
+        <div class="comentario">
+          <strong>Lucía R.:</strong> Creo que es buen momento para largo plazo, aunque con precaución.
+        </div>
+        <div class="comentario">
+          <strong>Kevin M.:</strong> Yo estoy esperando señales técnicas más claras. El mercado está inestable.
+        </div>
+      </div>
+    </div>
+
+    <form id="foro-form">
+      <input type="text" id="nombre" placeholder="Tu nombre" required />
+      <textarea id="comentario" placeholder="Escribe tu comentario..." required></textarea>
+      <button type="submit">Publicar</button>
+    </form>
+  </div>
+</section>
